@@ -21,7 +21,7 @@ const Account = ({
   updateFields,
 }: AccountProps) => {
   return (
-    <div className="flex flex-col gap-5 w-[450px]">
+    <div className="flex flex-col gap-5 w-[450px] h-[276px]">
       <div className="flex gap-5">
         <div className="flex flex-col w-[50%]">
           <label className="text-xs">First Name</label>
@@ -79,6 +79,11 @@ const Account = ({
             required
             onChange={(e) => updateFields({ password: e.target.value })}
           />
+          {password.length < 10 && password.length > 0 && (
+            <p className="text-red-500 text-xs">
+              ** must be at least 10 characters
+            </p>
+          )}
         </div>
         <div className="flex flex-col w-[50%]">
           <label className="text-xs">
@@ -91,6 +96,9 @@ const Account = ({
             required
             onChange={(e) => updateFields({ confirmPassword: e.target.value })}
           />
+          {password !== confirmPassword && password && confirmPassword && (
+            <p className="text-red-500 text-xs">** passwords do not match</p>
+          )}
         </div>
       </div>
     </div>

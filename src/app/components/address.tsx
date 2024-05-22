@@ -23,7 +23,7 @@ const Address = ({
   updateFields,
 }: AddressProps) => {
   return (
-    <div className="flex flex-col gap-5 w-[450px]">
+    <div className="flex flex-col gap-5 w-[450px] h-[276px]">
       <div className="flex gap-5">
         <div className="flex flex-col w-[50%]">
           <label className="text-xs">
@@ -82,7 +82,12 @@ const Address = ({
             type="text"
             value={zipCode}
             className="bg-gray-300 leading-9 px-3"
-            onChange={(e) => updateFields({ zipCode: e.target.value })}
+            onChange={(e) => {
+              const value = e.target.value;
+              if (value.length <= 5) {
+                updateFields({ zipCode: value });
+              }
+            }}
             required
           />
         </div>
