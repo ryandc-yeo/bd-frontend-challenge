@@ -53,13 +53,14 @@ const Address = ({
           <label className="text-xs">
             Country <span className="text-red-500">*</span>
           </label>
-          <input
-            type="text"
+          <select
             value={country}
-            className="bg-gray-300 leading-9 px-3"
+            className="bg-gray-300 h-9 leading-9 px-3"
             onChange={(e) => updateFields({ country: e.target.value })}
             required
-          />
+          >
+            <option value="US">US</option>
+          </select>
         </div>
         <div className="flex flex-col w-[30%]">
           <label className="text-xs">

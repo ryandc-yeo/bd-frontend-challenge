@@ -1,7 +1,7 @@
 type AccountData = {
   firstName: string;
   lastName: string;
-  userName: string;
+  username: string;
   email: string;
   password: string;
   confirmPassword: string;
@@ -14,7 +14,7 @@ type AccountProps = AccountData & {
 const Account = ({
   firstName,
   lastName,
-  userName,
+  username,
   email,
   password,
   confirmPassword,
@@ -45,14 +45,14 @@ const Account = ({
       </div>
       <div className="flex flex-col">
         <label className="text-xs">
-          Username <span className="text-red-500">*</span>
+          username <span className="text-red-500">*</span>
         </label>
         <input
           type="text"
-          value={userName}
+          value={username}
           className="bg-gray-300 leading-9 px-3"
           required
-          onChange={(e) => updateFields({ userName: e.target.value })}
+          onChange={(e) => updateFields({ username: e.target.value })}
         />
       </div>
       <div className="flex flex-col">

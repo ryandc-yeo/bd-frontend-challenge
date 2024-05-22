@@ -1,9 +1,10 @@
-import { withZod } from "./middleware";
+// import { withZod } from "./middleware";
 
-export const dynamic = "force-dynamic";
+// export const dynamic = "force-dynamic";
 
-export const POST = withZod(async (request, data) => {
-  console.log("Successfully received data", data);
+// export const POST = withZod(async (request, data) => {
+export const POST = (request) => {
+  console.log("Successfully received data", request);
   return new Response(
     JSON.stringify({
       data: {
@@ -17,4 +18,4 @@ export const POST = withZod(async (request, data) => {
       },
     }
   );
-});
+};
