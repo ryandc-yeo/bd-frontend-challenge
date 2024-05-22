@@ -21,9 +21,9 @@ const Account = ({
   updateFields,
 }: AccountProps) => {
   return (
-    <div className="flex flex-col gap-5 w-fit">
+    <div className="flex flex-col gap-5 w-[450px] h-[267px]">
       <div className="flex gap-5">
-        <div className="flex flex-col">
+        <div className="flex flex-col w-[50%]">
           <label className="text-xs">First Name</label>
           <input
             type="text"
@@ -33,7 +33,7 @@ const Account = ({
             onChange={(e) => updateFields({ firstName: e.target.value })}
           />
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col w-[50%]">
           <label className="text-xs">Last Name</label>
           <input
             type="text"
@@ -68,7 +68,7 @@ const Account = ({
         />
       </div>
       <div className="flex gap-5">
-        <div className="flex flex-col">
+        <div className="flex flex-col w-[50%]">
           <label className="text-xs">
             Password <span className="text-red-500">*</span>
           </label>
@@ -80,7 +80,7 @@ const Account = ({
             onChange={(e) => updateFields({ password: e.target.value })}
           />
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col w-[50%]">
           <label className="text-xs">
             Confirm Password <span className="text-red-500">*</span>
           </label>

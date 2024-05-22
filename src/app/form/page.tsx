@@ -26,7 +26,7 @@ type FormData = {
   address2: string;
   country: string;
   city: string;
-  zipCode: number;
+  zipCode: string;
   company: string;
   phoneNumber: string;
   wantsNotifications: boolean;
@@ -45,7 +45,7 @@ const userData: FormData = {
   address2: "",
   country: "",
   city: "",
-  zipCode: 0,
+  zipCode: "",
   company: "",
   phoneNumber: "",
   wantsNotifications: false,
@@ -99,13 +99,18 @@ const Form = () => {
           </div>
           {step}
           <div className="flex justify-between gap-2 mt-5 text-md font-light">
-            <button
-              type="button"
-              className="border border-gray-400 flex gap-2 items-center px-6 py-1 rounded-lg text-gray-500 hover:bg-gray-400 hover:text-white transition-all"
-            >
-              <FontAwesomeIcon icon={faArrowLeft} />
-              Back
-            </button>
+            {currStep === 0 ? (
+              <div></div>
+            ) : (
+              <button
+                type="button"
+                className="border border-gray-400 flex gap-2 items-center px-6 py-1 rounded-lg text-gray-500 hover:bg-gray-400 hover:text-white transition-all"
+                onClick={back}
+              >
+                <FontAwesomeIcon icon={faArrowLeft} />
+                Back
+              </button>
+            )}
             {currStep === steps.length - 1 ? (
               <button
                 type="submit"
