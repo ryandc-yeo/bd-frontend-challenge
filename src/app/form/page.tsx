@@ -70,12 +70,13 @@ const Form = () => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (currStep === steps.length - 1) {
+      console.log(data);
       const response = await fetch("/api/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(userData),
+        body: JSON.stringify({ data }),
       });
 
       if (response.ok) {
