@@ -23,7 +23,7 @@ const Address = ({
   updateFields,
 }: AddressProps) => {
   return (
-    <div className="flex flex-col gap-5 w-[450px] h-[267px]">
+    <div className="flex flex-col gap-5 w-[450px]">
       <div className="flex gap-5">
         <div className="flex flex-col w-[50%]">
           <label className="text-xs">
@@ -33,7 +33,7 @@ const Address = ({
             type="text"
             autoFocus
             value={address1}
-            className="bg-gray-300 leading-9"
+            className="bg-gray-300 leading-9 px-3"
             onChange={(e) => updateFields({ address1: e.target.value })}
             required
           />
@@ -43,7 +43,7 @@ const Address = ({
           <input
             type="text"
             value={address2}
-            className="bg-gray-300 leading-9"
+            className="bg-gray-300 leading-9 px-3"
             onChange={(e) => updateFields({ address2: e.target.value })}
           />
         </div>
@@ -56,7 +56,7 @@ const Address = ({
           <input
             type="text"
             value={country}
-            className="bg-gray-300 leading-9"
+            className="bg-gray-300 leading-9 px-3"
             onChange={(e) => updateFields({ country: e.target.value })}
             required
           />
@@ -68,7 +68,7 @@ const Address = ({
           <input
             type="text"
             value={city}
-            className="bg-gray-300 leading-9"
+            className="bg-gray-300 leading-9 px-3"
             onChange={(e) => updateFields({ city: e.target.value })}
             required
           />
@@ -80,7 +80,7 @@ const Address = ({
           <input
             type="text"
             value={zipCode}
-            className="bg-gray-300 leading-9"
+            className="bg-gray-300 leading-9 px-3"
             onChange={(e) => updateFields({ zipCode: e.target.value })}
             required
           />
@@ -91,7 +91,7 @@ const Address = ({
         <input
           type="text"
           value={company}
-          className="bg-gray-300 leading-9"
+          className="bg-gray-300 leading-9 px-3"
           onChange={(e) => updateFields({ company: e.target.value })}
         />
       </div>
@@ -100,7 +100,7 @@ const Address = ({
         <input
           type="text"
           value={phoneNumber}
-          className="bg-gray-300 leading-9"
+          className="bg-gray-300 leading-9 px-3"
           onChange={(e) => updateFields({ phoneNumber: e.target.value })}
         />
       </div>

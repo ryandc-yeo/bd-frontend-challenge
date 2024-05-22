@@ -21,7 +21,7 @@ const Account = ({
   updateFields,
 }: AccountProps) => {
   return (
-    <div className="flex flex-col gap-5 w-[450px] h-[267px]">
+    <div className="flex flex-col gap-5 w-[450px]">
       <div className="flex gap-5">
         <div className="flex flex-col w-[50%]">
           <label className="text-xs">First Name</label>
@@ -29,7 +29,7 @@ const Account = ({
             type="text"
             autoFocus
             value={firstName}
-            className="bg-gray-300 leading-9"
+            className="bg-gray-300 leading-9 px-3"
             onChange={(e) => updateFields({ firstName: e.target.value })}
           />
         </div>
@@ -38,7 +38,7 @@ const Account = ({
           <input
             type="text"
             value={lastName}
-            className="bg-gray-300 leading-9"
+            className="bg-gray-300 leading-9 px-3"
             onChange={(e) => updateFields({ lastName: e.target.value })}
           />
         </div>
@@ -50,7 +50,7 @@ const Account = ({
         <input
           type="text"
           value={userName}
-          className="bg-gray-300 leading-9"
+          className="bg-gray-300 leading-9 px-3"
           required
           onChange={(e) => updateFields({ userName: e.target.value })}
         />
@@ -62,7 +62,7 @@ const Account = ({
         <input
           type="email"
           value={email}
-          className="bg-gray-300 leading-9"
+          className="bg-gray-300 leading-9 px-3"
           required
           onChange={(e) => updateFields({ email: e.target.value })}
         />
@@ -75,7 +75,7 @@ const Account = ({
           <input
             type="password"
             value={password}
-            className="bg-gray-300 leading-9"
+            className="bg-gray-300 leading-9 px-3"
             required
             onChange={(e) => updateFields({ password: e.target.value })}
           />
@@ -87,7 +87,7 @@ const Account = ({
           <input
             type="password"
             value={confirmPassword}
-            className="bg-gray-300 leading-9"
+            className="bg-gray-300 leading-9 px-3"
             required
             onChange={(e) => updateFields({ confirmPassword: e.target.value })}
           />

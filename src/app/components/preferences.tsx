@@ -30,9 +30,9 @@ const Preferences = ({
   };
 
   return (
-    <div className="flex flex-col gap-5 w-fit">
-      <div className="flex flex-col">
-        <label>
+    <div className="flex flex-col gap-5 w-[450px]">
+      <div className="flex flex-col gap-3 text-md pl-5">
+        <label className="flex gap-2">
           <input
             type="checkbox"
             checked={checkedOne}
@@ -40,7 +40,7 @@ const Preferences = ({
           />
           Send notifications
         </label>
-        <label>
+        <label className="flex gap-2">
           <input
             type="checkbox"
             checked={checkedTwo}
@@ -50,13 +50,20 @@ const Preferences = ({
         </label>
       </div>
       <div className="flex flex-col">
-        <label>Notification Preferences</label>
-        <input
-          type="text"
+        <label className="text-xs">Notification Preferences</label>
+        <select
           value={notificationPreferences}
-          className="outline"
+          onChange={(e) =>
+            updateFields({
+              notificationPreferences: e.target.value as "email" | "text",
+            })
+          }
+          className="bg-gray-300 h-9 leading-9 px-3"
           required
-        />
+        >
+          <option value="email">Email</option>
+          <option value="text">Text</option>
+        </select>
       </div>
     </div>
   );
