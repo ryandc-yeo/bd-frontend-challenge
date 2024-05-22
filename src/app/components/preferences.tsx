@@ -1,33 +1,32 @@
 import { useState } from "react";
 
-type PreferencesProps = {
-  Preferences1: string;
-  Preferences2: string;
-  country: string;
-  city: string;
-  zipCode: number;
-  company: string;
-  phoneNumber: string;
+type PreferencesData = {
+  wantsNotifications: boolean;
+  shareInformation: boolean;
+  notificationPreferences: "email" | "text";
+};
+
+type PreferencesProps = PreferencesData & {
+  updateFields: (fields: Partial<PreferencesData>) => void;
 };
 
 const Preferences = ({
-  Preferences1,
-  Preferences2,
-  country,
-  city,
-  zipCode,
-  company,
-  phoneNumber,
+  wantsNotifications,
+  shareInformation,
+  notificationPreferences,
+  updateFields,
 }: PreferencesProps) => {
   const [checkedOne, setCheckedOne] = useState(false);
   const [checkedTwo, setCheckedTwo] = useState(false);
 
-  const handleChangeOne = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChangeOne = () => {
     setCheckedOne(!checkedOne);
+    wantsNotifications = !checkedOne;
   };
 
-  const handleChangeTwo = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChangeTwo = () => {
     setCheckedTwo(!checkedTwo);
+    shareInformation = !checkedTwo;
   };
 
   return (
@@ -52,7 +51,12 @@ const Preferences = ({
       </div>
       <div className="flex flex-col">
         <label>Notification Preferences</label>
-        <input type="text" value={phoneNumber} className="outline" required />
+        <input
+          type="text"
+          value={notificationPreferences}
+          className="outline"
+          required
+        />
       </div>
     </div>
   );

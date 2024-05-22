@@ -1,4 +1,4 @@
-type AddressProps = {
+type AddressData = {
   address1: string;
   address2: string;
   country: string;
@@ -6,6 +6,10 @@ type AddressProps = {
   zipCode: number;
   company: string;
   phoneNumber: string;
+};
+
+type AddressProps = AddressData & {
+  updateFields: (fields: Partial<AddressData>) => void;
 };
 
 const Address = ({
@@ -16,6 +20,7 @@ const Address = ({
   zipCode,
   company,
   phoneNumber,
+  updateFields,
 }: AddressProps) => {
   return (
     <div className="flex flex-col gap-5 w-fit">

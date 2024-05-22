@@ -1,10 +1,14 @@
-type AccountProps = {
+type AccountData = {
   firstName: string;
   lastName: string;
   userName: string;
   email: string;
   password: string;
   confirmPassword: string;
+};
+
+type AccountProps = AccountData & {
+  updateFields: (fields: Partial<AccountData>) => void;
 };
 
 const Account = ({
@@ -14,52 +18,78 @@ const Account = ({
   email,
   password,
   confirmPassword,
+  updateFields,
 }: AccountProps) => {
   return (
     <div className="flex flex-col gap-5 w-fit">
       <div className="flex gap-5">
         <div className="flex flex-col">
-          <label>First Name</label>
-          <input type="text" autoFocus value={firstName} className="outline" />
+          <label className="text-xs">First Name</label>
+          <input
+            type="text"
+            autoFocus
+            value={firstName}
+            className="bg-gray-300 leading-9"
+            onChange={(e) => updateFields({ firstName: e.target.value })}
+          />
         </div>
         <div className="flex flex-col">
-          <label>Last Name</label>
-          <input type="text" value={lastName} className="outline" />
+          <label className="text-xs">Last Name</label>
+          <input
+            type="text"
+            value={lastName}
+            className="bg-gray-300 leading-9"
+            onChange={(e) => updateFields({ lastName: e.target.value })}
+          />
         </div>
       </div>
       <div className="flex flex-col">
-        <label>
+        <label className="text-xs">
           Username <span className="text-red-500">*</span>
         </label>
-        <input type="text" value={userName} className="outline" required />
+        <input
+          type="text"
+          value={userName}
+          className="bg-gray-300 leading-9"
+          required
+          onChange={(e) => updateFields({ userName: e.target.value })}
+        />
       </div>
       <div className="flex flex-col">
-        <label>
+        <label className="text-xs">
           Email Address <span className="text-red-500">*</span>
         </label>
-        <input type="text" value={email} className="outline" required />
+        <input
+          type="email"
+          value={email}
+          className="bg-gray-300 leading-9"
+          required
+          onChange={(e) => updateFields({ email: e.target.value })}
+        />
       </div>
       <div className="flex gap-5">
         <div className="flex flex-col">
-          <label>
+          <label className="text-xs">
             Password <span className="text-red-500">*</span>
           </label>
           <input
             type="password"
             value={password}
-            className="outline"
+            className="bg-gray-300 leading-9"
             required
+            onChange={(e) => updateFields({ password: e.target.value })}
           />
         </div>
         <div className="flex flex-col">
-          <label>
+          <label className="text-xs">
             Confirm Password <span className="text-red-500">*</span>
           </label>
           <input
             type="password"
             value={confirmPassword}
-            className="outline"
+            className="bg-gray-300 leading-9"
             required
+            onChange={(e) => updateFields({ confirmPassword: e.target.value })}
           />
         </div>
       </div>
