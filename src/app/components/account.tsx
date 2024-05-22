@@ -29,6 +29,7 @@ const Account = ({
             type="text"
             autoFocus
             value={firstName}
+            placeholder="Joe"
             className="bg-gray-300 leading-9 px-3"
             onChange={(e) => updateFields({ firstName: e.target.value })}
           />
@@ -37,7 +38,7 @@ const Account = ({
           <label className="text-xs">Last Name</label>
           <input
             type="text"
-            value={lastName}
+            placeholder="Bruin"
             className="bg-gray-300 leading-9 px-3"
             onChange={(e) => updateFields({ lastName: e.target.value })}
           />
@@ -45,11 +46,12 @@ const Account = ({
       </div>
       <div className="flex flex-col">
         <label className="text-xs">
-          username <span className="text-red-500">*</span>
+          Username <span className="text-red-500">*</span>
         </label>
         <input
           type="text"
           value={username}
+          placeholder="joebruin"
           className="bg-gray-300 leading-9 px-3"
           required
           onChange={(e) => updateFields({ username: e.target.value })}
@@ -62,6 +64,7 @@ const Account = ({
         <input
           type="email"
           value={email}
+          placeholder="joebruin@ucla.edu"
           className="bg-gray-300 leading-9 px-3"
           required
           onChange={(e) => updateFields({ email: e.target.value })}

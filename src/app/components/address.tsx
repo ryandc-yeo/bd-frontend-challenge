@@ -82,6 +82,7 @@ const Address = ({
             type="text"
             value={zipCode}
             className="bg-gray-300 leading-9 px-3"
+            placeholder="12345"
             onChange={(e) => {
               const value = e.target.value;
               if (value.length <= 5) {
@@ -107,6 +108,7 @@ const Address = ({
           type="text"
           value={phoneNumber}
           className="bg-gray-300 leading-9 px-3"
+          placeholder="(123) 456-7890"
           onChange={(e) => updateFields({ phoneNumber: e.target.value })}
         />
       </div>
