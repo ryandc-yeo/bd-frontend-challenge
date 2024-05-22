@@ -67,10 +67,23 @@ const Form = () => {
     <Preferences {...data} updateFields={update} />,
   ]);
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (currStep === steps.length - 1) {
-      //submit
+      const response = await fetch("/api/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData),
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        console.log(result);
+      } else {
+        console.error("Error:", response.status);
+      }
     } else {
       return next();
     }
