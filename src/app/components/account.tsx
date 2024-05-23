@@ -1,3 +1,13 @@
+import {
+  faUser,
+  faUserTie,
+  faUserNinja,
+  faEnvelope,
+  faKey,
+  faFingerprint,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 type AccountData = {
   firstName: string;
   lastName: string;
@@ -23,23 +33,28 @@ const Account = ({
   return (
     <div className="flex flex-col gap-5 w-[450px] h-[276px]">
       <div className="flex gap-5">
-        <div className="flex flex-col w-[50%]">
+        <div className="flex flex-col w-[47.5%]">
           <label className="text-xs">First Name</label>
+          <FontAwesomeIcon icon={faUser} className="absolute mt-[26px] ml-2" />
           <input
             type="text"
             autoFocus
             value={firstName}
             placeholder="Joe"
-            className="bg-gray-300 leading-9 px-3"
+            className="bg-gray-300 leading-9 pl-8"
             onChange={(e) => updateFields({ firstName: e.target.value })}
           />
         </div>
-        <div className="flex flex-col w-[50%]">
+        <div className="flex flex-col w-[47.5%]">
           <label className="text-xs">Last Name</label>
+          <FontAwesomeIcon
+            icon={faUserTie}
+            className="absolute mt-[26px] ml-2"
+          />
           <input
             type="text"
             placeholder="Bruin"
-            className="bg-gray-300 leading-9 px-3"
+            className="bg-gray-300 leading-9 pl-8"
             onChange={(e) => updateFields({ lastName: e.target.value })}
           />
         </div>
@@ -48,11 +63,15 @@ const Account = ({
         <label className="text-xs">
           Username <span className="text-red-500">*</span>
         </label>
+        <FontAwesomeIcon
+          icon={faUserNinja}
+          className="absolute mt-[26px] ml-2"
+        />
         <input
           type="text"
           value={username}
           placeholder="joebruin"
-          className="bg-gray-300 leading-9 px-3"
+          className="bg-gray-300 leading-9 pl-8"
           required
           onChange={(e) => updateFields({ username: e.target.value })}
         />
@@ -61,24 +80,29 @@ const Account = ({
         <label className="text-xs">
           Email Address <span className="text-red-500">*</span>
         </label>
+        <FontAwesomeIcon
+          icon={faEnvelope}
+          className="absolute mt-[26px] ml-2"
+        />
         <input
           type="email"
           value={email}
           placeholder="joebruin@ucla.edu"
-          className="bg-gray-300 leading-9 px-3"
+          className="bg-gray-300 leading-9 pl-8"
           required
           onChange={(e) => updateFields({ email: e.target.value })}
         />
       </div>
       <div className="flex gap-5">
-        <div className="flex flex-col w-[50%]">
+        <div className="flex flex-col w-[47.5%]">
           <label className="text-xs">
             Password <span className="text-red-500">*</span>
           </label>
+          <FontAwesomeIcon icon={faKey} className="absolute mt-[26px] ml-2" />
           <input
             type="password"
             value={password}
-            className="bg-gray-300 leading-9 px-3"
+            className="bg-gray-300 leading-9 pl-8"
             required
             onChange={(e) => updateFields({ password: e.target.value })}
           />
@@ -88,14 +112,18 @@ const Account = ({
             </p>
           )}
         </div>
-        <div className="flex flex-col w-[50%]">
+        <div className="flex flex-col w-[47.5%]">
           <label className="text-xs">
             Confirm Password <span className="text-red-500">*</span>
           </label>
+          <FontAwesomeIcon
+            icon={faFingerprint}
+            className="absolute mt-[26px] ml-2"
+          />
           <input
             type="password"
             value={confirmPassword}
-            className="bg-gray-300 leading-9 px-3"
+            className="bg-gray-300 leading-9 pl-8"
             required
             onChange={(e) => updateFields({ confirmPassword: e.target.value })}
           />
